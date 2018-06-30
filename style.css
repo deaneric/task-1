@@ -23,8 +23,6 @@ nav{
   grid-area:image-sec;
   background-image:url('images/bags.jpg'), url('images/shop1.jpg');
   background-repeat: no-repeat, no-repeat;
-  background-size: 170px 150px, cover;
-  background-position: 900px bottom,center;
 }
 .projects-section{
  grid-area:projects-sec;
@@ -68,30 +66,27 @@ footer{
 						'power-sec power-sec power-sec'
 						'. products-sec .'
 						'footer footer footer';
-	grid-template-rows:auto 300px auto auto auto auto 150px auto auto;
-	grid-template-columns:15% 70% 15%;
 	grid-row-gap: 40px;
 }
 /******************************/
 /***********FLEX CSS*******************/
 .flex-container{
 	display:flex;
-	flex-flow:row wrap; /*wrap*/
-	justify-content:space-between;
-	background-color:white;           /*temporary*/
 	align-items: center;
 }
 /******************************/
 
 /**********NAVIGATION CSS**************/	
+nav .flex-container{
+	flex-flow:row nowrap;
+	justify-content:space-between;          
+}
 .flex-container	> .brand-logo {
 		border-top: 5px solid var(--prime-color);    
-		width:100%;
-		max-width: 120px;	
+		width:100%;	
 		animation-name: header-logo;
 		animation-duration: 3s;    
 		animation-fill-mode: forwards;
-	/*	animation-delay: 2s;*/
 }		
 .brand-logo > img{
 			margin: 0 0 0 5px;
@@ -101,7 +96,6 @@ footer{
 	animation-name: header-menu;
     animation-duration: 3s;    
 	animation-fill-mode: forwards;
-	/*animation-delay: 2s;*/
 }
 .menu > a{
     padding: 10px 20px;
@@ -139,7 +133,6 @@ footer{
 .image-section > div{
 	max-width: 300px;
 	width:100%;
-	transform: translate(190px,30px);
 	color: white;
 }
 .image-section > div > p{
@@ -168,11 +161,6 @@ footer{
 /******************************/
 
 /***********PROJECTS SECTION*******************/
-.projects-section > .flex-container{
-    flex-flow: nowrap!important;
-    /*align-items: baseline!important;*/
-}
-
 .flex-container > .manage-projects{
     border-top: 1px dotted black;
     max-width: 300px;
@@ -195,18 +183,19 @@ footer{
 
 /***********DISCOUNT SECTION*******************/
 .discount-section > .flex-container{
-    flex-flow: nowrap!important;
+    flex-flow: nowrap;
     align-items: flex-start!important;
 	justify-content: space-between;
 	margin: 0 0 20px 0;
 }
 .special-discount-icon{
 	width: 30%;
+	margin: 0 10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    /*height: 35vh;*/
 }
 .special-discount-content{
 	width: 70%;
+	margin: 0 10px;
 }
 /*.discount-section .position-div{
 	margin: 0 40px;
@@ -239,6 +228,7 @@ footer{
 /*********POWER SECTION*********************/
 .power-millions{
 	border-top:1px dotted black;
+	padding: 0px 25px;
 }
 .power-millions > p{
 	color: var(--bar-bg-color);
@@ -248,25 +238,19 @@ footer{
 /***********ARTICLE SECTION*******************/
 .feature-article > .flex-container{
 	background-color:var(--div-bar-bg-color);
-	align-items: center;
+	flex-flow: row wrap;
     justify-content: center;
 }
 .feature-article .feature-div{
-	transform: translate(-63px);
 	background-color: var(--prime-color);
-	width: 32%;
-    padding: 35px 70px;
     text-align: left;	
 	color:white;
 }
 .feature-article .feature-div::after{
 	content:"";
 	position:absolute;
-	border-width: 5px;
     border-style: solid;
     border-color: white white transparent white;
-	top: 0px;
-    right: 108px;
 	border-width: 24px 18px
 }
 .feature-article .feature-div li,pre{
@@ -281,17 +265,11 @@ footer{
 .feature-article .article-div p,i{
 	color: var(--bar-bg-color);
 }
-.feature-article .article-div{
-	margin-top: -50px;
-}
 /******************************/
 
 /**********MANAGE SECTION********************/
 .manage-section .power-section{
-	width: 100%;
 	max-height:100%;
-    height: 150px;
-    padding: 15px 190px;
     background-color: #80808014;
 	border-radius: 12px;	
 }
@@ -302,6 +280,7 @@ footer{
 }
 
 .manage-section .flex-container{
+	flex-flow: row wrap;
 	justify-content:center;
 }
 .manage-section .flex-container .manage-projects{
@@ -315,12 +294,11 @@ footer{
 	width:100%;
 	height:100%;
 	text-align: center;
-    line-height: 130px;
 	color:white;
 }
 .powered-section .power-body h3{
 	display:inline-block;
-	margin: 0px 20px 0 10px;
+	margin:0;
 }
 .powered-section .power-body button{
 	display:inline-block;
@@ -335,16 +313,12 @@ footer{
 /**********PRODUCT SECTION********************/
 .products-section .products-guide{
     flex-flow: nowrap;
-    justify-content: center;
-    height: 200px;
     background-color: #80808014;
-    border-radius: 12px;
-	padding: 0 0 0 70px;
 	margin: 0 0 40px 0;
 }
 .products-section .products-guide .product-info{
 	width: 430px;
-    margin: 0 0px 0 30px;
+    margin: 0 5px;
 	
 }
 .products-section .products-guide .product-info p{
@@ -353,6 +327,7 @@ footer{
 .products-section .products-guide .product-image{
 	width:166px;
 	height:140px;
+	margin: 0 5px;
 	background-color:var(--div-bar-bg-color);
 	box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
@@ -360,35 +335,36 @@ footer{
 	border-radius: 8px;
     font-style: normal;
 }
-
-.products-section .items-guide{
+/******************************/
+/**********ITEMS SECTION********************/
+.items-guide{
 	margin-bottom: 40px;
 }
-.products-section .items-guide .featue-item{
+.items-guide .featue-item{
 	width:100%;
    	max-width: 300px;
 	margin: 10px 0;
 }
-.products-section .items-guide .featue-item .item-image{
+.items-guide .featue-item .item-image{
 	background-color: #80808014;
     width: 200px;
     height: 200px;
     margin: auto;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.products-section .items-guide .featue-item .item-name{
+.items-guide .featue-item .item-name{
 	text-align: center;
 }
-.products-section .items-guide .featue-item .item-name p{
+.items-guide .featue-item .item-name p{
 	color:var(--bar-bg-color);
 	font-size:0.8em;
 }
-.products-section .items-guide .featue-item .item-price{
+.items-guide .featue-item .item-price{
 	width: 100%;
     height: 100%;
     max-height: 38px;
 }
-.products-section .items-guide .featue-item .item-price .cost-item{
+.items-guide .featue-item .item-price .cost-item{
 	display: inline-block;
     width: 25%;
     height: auto;
@@ -398,11 +374,10 @@ footer{
     color: white;
 	border-radius: 10px 0px 0px 10px;
 }
-.products-section .items-guide .featue-item .item-price .cost-item i{
+.items-guide .featue-item .item-price .cost-item i{
 	color:white;
 }
-.products-section .items-guide .featue-item .item-price .cost-btn{
-	border-radius: 0px;
+.items-guide .featue-item .item-price .cost-btn{
 	background-color: #80808014;
     color: var(--prime-color);
     width: 75%;
@@ -413,12 +388,14 @@ footer{
 	font-style:normal;
 }
 
-.products-section .comments{
-	justify-content: center;
-}
+
 /******************************/
 
 /**********COMMENTS SECTION********************/
+.comments{
+	flex-flow:wrap;
+	justify-content: center;
+}
 .comments .commemt-container{
 	max-width: 300px;
     height: 250px;
@@ -479,18 +456,19 @@ footer{
 
 /**********FOOTER SECTION********************/
 .footer-body .footer-div{
+	flex-flow: row wrap;
 	background-color:inherit;
 	color:var(--bar-bg-color);
 	justify-content: center;
 }
 .footer-div ul{
-	list-style-type:none;
+	list-style-type:none;	
+    padding:0px;
 }
 .footer-div .footer-info h3{
 	color:white;
 }
 .footer-div .footer-info{
-	margin: 0 40px 0 40px;
     text-align: center;
 	line-height: 1.8;
 }
@@ -504,14 +482,11 @@ footer{
 .footer-body .org-address img{
 	width: 100px;
     object-fit: cover;
-    margin: 15px 0 -15px 0;
-}
-.footer-body .org-address ul{
-	transform: translate(-20px,-30px);
+	margin: 0px 0 -40px 0;
 }
 .footer-body .org-address a{
 	display: inline-block;
-    width: 20%;
+    width: 9%;
     text-align: center;
     padding: 2px 0px;
     margin: 0px 1px;
@@ -533,9 +508,6 @@ footer{
 }
 
 /************NAVIGATION CSS******************/
-nav .flex-container{
-	flex-flow: row nowrap;
-}
 .flex-container	> .brand-logo {
     max-width: 70px;
 }
@@ -555,27 +527,13 @@ nav .flex-container{
 	justify-content: center;
 }
 
-/*********DISCOUNT SECTION*********************/
-.special-discount-icon {
-    margin: 0 10px;
-}
-.special-discount-content {
-    margin: 0 10px;
-}
-
-/************POWER MILLIONS SECTION******************/
-.power-millions {
-    padding: 0px 25px;
-}
-
 /*************ARTICLE SECTION*****************/
 .feature-article .feature-div {
-	transform: translate(0);
     width: 100%;
     padding: 10px 50px;
 }
 .feature-article .feature-div::after{
-	right: 25px;
+    transform: translate(15rem,-15.7rem);
 }
 .feature-article .article-div{
 	margin-top:0px;
@@ -594,31 +552,20 @@ nav .flex-container{
 /*********POWERED SECTION*********************/
 .powered-section > .power-body {
     padding-top: 30px;
-    text-align: center;
     line-height: 2;
-    color: white;
-}
-.powered-section .power-body h3 {
-	margin: 0px;
 }
 /*********PRODUCTS SECTION*********************/
 .products-section .products-guide {
-    flex-flow: nowrap;
-    justify-content: inherit;
+    justify-content: space-between;
     height: 100%;
     border-radius: 0px;
     padding: 15px 0;
 }
-.products-section .products-guide .product-image{
-	margin:0 5px;
-}
-.products-section .products-guide .product-info {
-    margin: 0 5px;
-}
 .products-section .products-guide .product-info p {
     font-size: 0.9em;
 }
-.products-section .items-guide {
+.items-guide {
+	flex-flow: row wrap;
     justify-content: center;
 }
 
@@ -627,18 +574,7 @@ nav .flex-container{
     margin: 0;
     width: 100%;
 }
-.footer-div ul {
-    padding:0px;
-}
-.footer-body .org-address img {
-    margin: 0px 0 -40px 0;
-}
-.footer-body .org-address ul {
-    transform: none;
-}
-.footer-body .org-address a {
-    width: 9%;
-}
+
 }
 
 @media (min-width:480px) {
@@ -656,9 +592,14 @@ nav .flex-container{
 .feature-article .feature-div {    
     width: 50%;   
 }
+.feature-article .feature-div::after{
+    transform: translate(13rem,-15.7rem);
+}
 .feature-article .article-div {
     width: 50%;
 }
+
+
 
 /***********MANAGE SECTION*******************/
 .manage-section .flex-container .manage-projects {
@@ -667,6 +608,10 @@ nav .flex-container{
 /************POWERED SECTION***********************/
 .powered-section > .power-body { 
     line-height: 4;
+}
+
+.footer-body .org-address a {
+    width: 5%;
 }
 
 
@@ -681,7 +626,11 @@ nav .flex-container{
 
 /**********PROJECT SECTION********************/
 .projects-section > .flex-container {
-    justify-content: space-between;
+/*    justify-content: space-between;*/
+}
+
+.flex-container > .manage-projects {
+    max-width: 275px;
 }
 /***********NAVIFATION CSS*******************/
 .flex-container	> .brand-logo {
@@ -696,13 +645,7 @@ nav .flex-container{
 .image-section > div {
     transform: translate(190px,30px);
 }
-/***********FEATURE SECTION*******************/
-.feature-article .feature-div {
-    width: 35%;
-}
-.feature-article .article-div {
-    width: 35%;
-}
+
 /**********MANAGE SECTION********************/
 .manage-section .flex-container {
     justify-content: space-evenly;
@@ -712,14 +655,14 @@ nav .flex-container{
     justify-content: center;
 }
 
-.products-section .items-guide {
-    justify-content: space-between;
-}
 /***********FOOTER SECTION*******************/
 .footer-div .footer-info {
-    margin: 0;
     width: 25%;
 }
+.footer-body .org-address a{
+	width: 16%;
+}
+
 
 }
 @media (min-width:1024px) {
@@ -729,17 +672,41 @@ nav .flex-container{
 .projects-section > .flex-container {
     justify-content: center;
 }
-/************PRODUCTS SECTION******************/
-.products-section .items-guide {
-    justify-content:center;
+.flex-container > .manage-projects {
+    max-width: 300px;
 }
+/***********FEATURE SECTION*******************/
+.feature-article .feature-div {
+    width: 35%;
+}
+.feature-article .article-div {
+    width: 35%;
+}
+.feature-article .feature-div::after {
+    transform: translate(15rem,-15.7rem);
+}
+
+.footer-body .org-address a {
+    width: 10%;
+}
+
 }
 @media (min-width:1281px) {
+
+.projects-section > .flex-container {
+    justify-content: space-between;
+}	
 	
+.items-guide {
+    justify-content:space-between;
+}
+
+.comments {
+    justify-content: space-evenly;
+}
+
+.feature-article .feature-div::after {
+    transform: translate(20rem,-15.7rem);
 }
 	
-	
-   
-
-	
-	
+}
